@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Discovery Hub - E-commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">AI Product Discovery Hub</h1>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                    <button id="searchBtn" class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-actions">
+                    <button id="cartBtn" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <aside class="filters-sidebar">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <h4>Categories</h4>
+                <div id="categoryFilters">
+                    <label><input type="checkbox" value="Electronics" class="category-filter"> Electronics</label><label><input type="checkbox" value="Fashion" class="category-filter"> Fashion</label><label><input type="checkbox" value="Home & Garden" class="category-filter"> Home & Garden</label><label><input type="checkbox" value="Health & Beauty" class="category-filter"> Health & Beauty</label><label><input type="checkbox" value="Sports & Outdoors" class="category-filter"> Sports & Outdoors</label><label><input type="checkbox" value="Toys & Games" class="category-filter"> Toys & Games</label><label><input type="checkbox" value="Books" class="category-filter"> Books</label><label><input type="checkbox" value="Automotive" class="category-filter"> Automotive</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <input type="range" id="priceRange" min="0" max="1000" value="1000" class="price-slider">
+                <div class="price-display">$0 - $<span id="priceValue">1000</span></div>
+            </div>
+            <div class="filter-group">
+                <h4>Sort By</h4>
+                <select id="sortSelect" class="sort-select">
+                    <option value="name">Name A-Z</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <h4>Price Comparison</h4>
+                <label><input type="checkbox" id="enableComparison"> Enable Price Comparison</label>
+            </div>
+        </aside>
+
+        <section class="products-container">
+            <div class="products-header">
+                <h2>Products</h2>
+                <div class="view-toggle">
+                    <button id="gridView" class="view-btn active"><i class="fas fa-th"></i></button>
+                    <button id="listView" class="view-btn"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            <div id="productsGrid" class="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            <div id="loadingSpinner" class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i> Loading products...
+            </div>
+        </section>
+    </main>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    <li><a href="gdpr-compliance.html">GDPR Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: support@aiproductdiscoveryhub.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI Product Discovery Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
